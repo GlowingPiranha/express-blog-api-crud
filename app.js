@@ -8,8 +8,10 @@ const app = express();
 const port = 3000;
 
 // * importo posts router
-const postRouter = require('./routers/posts');
+const postRouter = require('./routers/posts.js');
 
+
+app.use(express.json());
 // ! inserisco il middleware
 app.use(express.static('public'));
 

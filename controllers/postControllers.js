@@ -3,13 +3,40 @@ const posts = require('../data/dataPosts');
 
 // * index
 const index = (req, res) => {
-  res.json(posts);
+  // recupero il parametro tramite query sting
+  const tagParam = req.query.tags;
+
+  // se non c'è parametro, restituisco tutti i post
+  if (!tagParam) {
+    return res.json(posts);
+  }
+
+  const filteredPosts = posts.filter(post => {
+    return post.tags && post.tags.some(tag => tag.toLowerCase() === tagParam.toLowerCase());
+  });
+
+  res.json(filteredPosts);
 }
 
 // * show
 const show = (req, res) => {
-  res.send(`Dettaglio del post con id: ${req.params.id}`);
-}
+  console.log('show chiamato con id:', req.params.id);
+  // converto da stringa a numero
+  const id = parseInt(req.params.id);
+  // cerco il post
+  const post = posts.find(item => item.id === id);
+
+  // faccio IF
+  if (!post) {
+    return res.status(404).json({
+      error: "404 Not Found",
+      message: "Post non trovato"
+    })
+  }
+
+  // se è apposto restituisce il post
+  res.json(post);
+};
 
 // * create
 const create = (req, res) => {
