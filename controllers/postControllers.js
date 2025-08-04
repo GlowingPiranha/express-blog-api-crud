@@ -1,3 +1,6 @@
+// * importo i dati da data.js
+const posts = require('../data/dataPosts');
+
 // * index
 const index = (req, res) => {
   res.json(posts);
