@@ -50,7 +50,24 @@ const update = (req, res) => {
 
 // * delete
 const destroy = (req, res) => {
-  res.send(`Cancellazione del post con id: ${req.params.id}`);
+
+  const id = parseInt(req.params.id);
+
+  const post = posts.find(item => item.id === id);
+
+  if (!post) {
+    return res.status(404).json({
+      error: "404 Not Found",
+      message: "Post non trovato"
+    })
+  }
+
+  posts.splice(posts.indexOf(post), 1);
+
+  console.log('nuovo array');
+  console.log(posts);
+
+  res.sendStatus(204);
 }
 
 module.exports = {
