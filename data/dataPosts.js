@@ -45,3 +45,12 @@ const posts = [
 ];
 
 module.exports = posts;
+
+
+
+// {
+//     title: "Carsolina",
+//     content: `La crema carsolina è un dolce elegante e goloso della tradizione triestina e del Carso, nato dall’incontro tra semplicità contadina e sapori più raffinati. Composta da sottili strati di pasta sfoglia alternati a una crema morbida e vellutata, simile a una chantilly all’italiana, questo dessert conquista per la sua leggerezza e delicatezza. La crema, a base di pasticcera arricchita con panna montata, dona al dolce una consistenza ariosa, perfettamente bilanciata dalla croccantezza della sfoglia. Ogni famiglia custodisce la propria versione, con piccoli segreti che riguardano il profumo della crema, il tipo di liquore usato o la finitura in superficie: c’è chi spolvera con zucchero a velo, chi aggiunge una leggera glassa o una granella di frutta secca. La crema carsolina è il dolce delle feste e delle domeniche in famiglia, ma anche il perfetto accompagnamento per una pausa pomeridiana dal gusto raffinato.`,
+//     image: "/imgs/posts/carsolina.jpeg",
+//     tags: ["Dolci", "Crema", "Dolci delle feste"],
+// }

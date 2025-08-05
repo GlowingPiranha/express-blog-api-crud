@@ -40,7 +40,12 @@ const show = (req, res) => {
 
 // * create
 const create = (req, res) => {
-  res.send(`Creazione di un nuovo post`);
+  console.log(`dati ricevuti nel body`, req.body);
+
+  res.status(200).json({
+    message: "post ricevuto correttamente",
+    dati: req.body
+  })
 }
 
 // * update
