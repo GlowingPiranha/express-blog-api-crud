@@ -40,12 +40,27 @@ const show = (req, res) => {
 
 // * create
 const create = (req, res) => {
-  console.log(`dati ricevuti nel body`, req.body);
+  // * genero un nuovo id
+  const newID = posts[posts.length - 1].id + 1;
 
-  res.status(200).json({
-    message: "post ricevuto correttamente",
-    dati: req.body
-  })
+  // * destrutturo il body della richiesta
+  const { title, content, image, tags } = req.body
+
+  // * creo un nuovo oggetto post
+  const newPost = {
+    id: newID,
+    title,
+    content,
+    image,
+    tags
+  }
+
+  // *pusho l'oggetto appena creato nell'array posts
+  posts.push(newPost);
+
+  console.log(posts);
+
+  res.status(201).json(newPost);
 }
 
 // * update
