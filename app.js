@@ -4,6 +4,8 @@ const express = require('express');
 // ! definisco app
 const app = express();
 
+app.use(express.json());
+
 // ! definisco il port
 const port = 3000;
 
@@ -11,7 +13,7 @@ const port = 3000;
 const postRouter = require('./routers/posts.js');
 
 
-app.use(express.json());
+
 // ! inserisco il middleware
 app.use(express.static('public'));
 
